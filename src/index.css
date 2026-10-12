@@ -9,3 +9,9 @@
   --color-links: #c4c4c4;
   --color-text: #fff;
 }
+
+body {
+  font-family:
+    Eurostile Next LT Pro Light Ext,
+    sans-serif;
+}
