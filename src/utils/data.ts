@@ -81,3 +81,13 @@ export const clients: ClientRecord[] = [
     field: "Brand Consultancy",
   },
 ];
+
+export const navLinks = [
+  "Home",
+  "About",
+  "Work",
+  "Clients",
+  "Process",
+  "Sectors",
+  "Contacts",
+];
