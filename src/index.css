@@ -5,7 +5,27 @@
   --transition-ease: cubic-bezier(0.06, 0, 0, 1);
   --transition-default: var(--transition-duration) var(--transition-ease);
   --element-radius: 2px;
+}
+
+@theme {
   --color-panel: #2b292c;
   --color-links: #c4c4c4;
   --color-text: #fff;
+  --color-navBackground: rgb(43, 41, 44);
+  --font-sans: "Suisse Intl", sans-serif;
+  --font-eurostile: "Eurostile Next LT Pro Light Ext", sans-serif;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Eurostile Next LT Pro Light Ext";
+  src: url("/fonts/EurostileNextLTPro-LightExt.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
