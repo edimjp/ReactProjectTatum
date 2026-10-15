@@ -4,7 +4,7 @@ import { motion, stagger, AnimatePresence, type Variants } from "motion/react";
 import { navLinks } from "../utils/data";
 import VideoCard from "../home/VideoCard";
 import previewSrc from "../assets/videos/fiftyseven-cover.mp4";
-import videoSrc from "../assets/videos/fiftyseven.mp4";
+import videoSrc from "../assets/videos/fiftysevenmodal.mp4";
 
 const ease: [number, number, number, number] = [0.06, 0, 0, 1];
 

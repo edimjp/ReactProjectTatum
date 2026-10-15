@@ -11,8 +11,23 @@
   --color-hover: #413f42;
 }
 
-body {
-  font-family:
-    Eurostile Next LT Pro Light Ext,
-    sans-serif;
+@theme {
+  --color-panel: #2b292c;
+  --color-links: #c4c4c4;
+  --color-text: #fff;
+  --color-hover: #413f42;
+}
+
+@font-face {
+  font-family: "Suisse Intl";
+  src: url("/fonts/SuisseIntl-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Eurostile Next LT Pro Light Ext";
+  src: url("/fonts/EurostileNextLTPro-LightExt.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
