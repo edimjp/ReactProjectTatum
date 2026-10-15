@@ -12,7 +12,7 @@ const HomeBody = () => {
         <div className="tracking-[0.1em] font-['Eurostile_Next_LT_Pro_Light_Ext', sans-serif] scale-x-125 uppercase font-light text-[10px]">
           est. &middot; 2016
         </div>
-        <div className="scale-x-125 font-['Bahnschrift_Light'] font-thin text-center text-8xl">
+        <div className="scale-x-125 font-eurostile font-thin text-center text-8xl">
           Boutique
           <br />
           studio.
