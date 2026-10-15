@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import Client from "./pages/client/Client";
+import Clients from "./pages/clients/Clients";
+import NavMenuDropDown from "./components/NavMenuDropDown";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/client" element={<Client />} />
+        <Route path="/clients" element={<Clients />} />
+        <Route index element={<NavMenuDropDown />} />
       </Routes>
     </BrowserRouter>
   );
