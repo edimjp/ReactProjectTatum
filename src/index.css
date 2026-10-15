@@ -16,6 +16,9 @@
   --color-links: #c4c4c4;
   --color-text: #fff;
   --color-hover: #413f42;
+  --color-navBackground: rgb(43, 41, 44);
+  --font-sans: "Suisse Intl", sans-serif;
+  --font-eurostile: "Eurostile Next LT Pro Light Ext", sans-serif;
 }
 
 @font-face {

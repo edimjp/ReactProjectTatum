@@ -1,10 +1,6 @@
-import { useState } from "react";
 import { NavLink } from "react-router";
 import { motion, stagger, AnimatePresence, type Variants } from "motion/react";
 import { navLinks } from "../utils/data";
-import VideoCard from "../home/VideoCard";
-import previewSrc from "../assets/videos/fiftyseven-cover.mp4";
-import videoSrc from "../assets/videos/fiftysevenmodal.mp4";
 
 const ease: [number, number, number, number] = [0.06, 0, 0, 1];
 
@@ -55,22 +51,9 @@ const linkVariants = {
 
 // const menuVariant = {};
 
-const NavMenuDropDown = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+const NavMenuDropDown = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
   return (
-    <>
-      {" "}
-      <motion.button
-        onMouseEnter={() => toggleMenu()}
-        onMouseLeave={() => toggleMenu()}
-        className="border-2 border-(--color-links) cursor-pointer rounded-md px-4 py-2"
-      >
-        Hover
-      </motion.button>
+    <div className="absolute top-9 right-33">
       <AnimatePresence>
         {isMenuOpen && (
           <motion.nav
@@ -78,7 +61,7 @@ const NavMenuDropDown = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="flex absolute right-10 bg-(--color-panel) rounded-xs text-[13px] w-37.5"
+            className="absolute left-0 top-full z-50 flex w-37.5 rounded-xs bg-(--color-panel) text-[13px]"
           >
             <motion.ul className="group/li flex flex-col mx-6.25 my-4.5">
               {navLinks.map((navLink) => {
@@ -110,13 +93,7 @@ const NavMenuDropDown = () => {
           </motion.nav>
         )}
       </AnimatePresence>
-      <VideoCard
-        previewSrc={previewSrc}
-        videoSrc={videoSrc}
-        duration="01:57"
-        title="Our latest project"
-      />
-    </>
+    </div>
   );
 };
 

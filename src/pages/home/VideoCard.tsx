@@ -30,7 +30,6 @@ const VideoCard = ({
 
   return (
     <>
-      {/* Video previewSrc card */}
       <motion.button
         type="button"
         onClick={() => setIsOpen(true)}
@@ -40,7 +39,7 @@ const VideoCard = ({
         }}
         whileHover="hover"
         initial="initial"
-        className="group relative block size-30 overflow-hidden rounded-full text-left"
+        className="group absolute -bottom-1/4 right-0 aspect-square size-30 shrink-0 overflow-hidden rounded-full p-0 text-left"
         aria-label={`Play ${title}, duration ${duration}`}
       >
         <video
@@ -50,11 +49,11 @@ const VideoCard = ({
           loop
           playsInline
           aria-hidden="true"
-          className="aspect-video size-full object-cover"
+          className="aspect-video size-full object-cover rounded-full"
         />
 
         {/* Optional dark overlay */}
-        <div className="absolute inset-0 bg-black/30 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-black/30 transition-colors duration-300 rounded-full" />
 
         {/* Play button */}
         <motion.div className="absolute inset-0 flex items-center justify-center">

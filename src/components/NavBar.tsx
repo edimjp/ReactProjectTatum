@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { Link, NavLink, useLocation } from "react-router";
+import NavMenuDropDown from "./NavMenuDropDown.tsx";
 import fiftyseven from "../../src/assets/icons/fiftysevn.svg";
 import HamburgerMenu from "./HamburgerMenu.tsx";
 const TIME_ZONE = "Africa/Lagos";
@@ -25,6 +25,7 @@ function getTimeParts() {
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(getTimeParts);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => setCurrentTime(getTimeParts()), 1000 * 30);
@@ -45,11 +46,18 @@ export default function NavBar() {
               className="max-h-[10px] max-w-[129px]"
             />
 
-            <div className="flex items-center ">
-              <HamburgerMenu
-                open={open}
-                onClick={() => setOpen((prev) => !prev)}
-              />
+            <div className="relative flex items-center">
+              <div
+                onMouseEnter={() => setIsMenuOpen(true)}
+                onMouseLeave={() => setIsMenuOpen(false)}
+              >
+                <HamburgerMenu
+                  open={open}
+                  onClick={() => setOpen((prev) => !prev)}
+                />
+
+                <NavMenuDropDown isMenuOpen={isMenuOpen} />
+              </div>
             </div>
           </div>
 

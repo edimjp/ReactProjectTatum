@@ -1,4 +1,3 @@
-// src/components/HamburgerMenu.tsx
 type HamburgerMenuProps = {
   open: boolean;
   onClick: () => void;
