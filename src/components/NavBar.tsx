@@ -38,7 +38,7 @@ export default function NavBar() {
     <header className="m-[4.1667vw]">
       <nav>
         <div className="flex justify-between">
-          <div className="flex w-[455px] justify-between items-center bg-navBackground py-[15px] px-[18px]">
+          <div className="flex w-full sm:w-[455px] justify-between items-center bg-navBackground py-[15px] px-[18px]">
             <img
               src={fiftyseven}
               alt="fiftyseven"
@@ -46,9 +46,6 @@ export default function NavBar() {
             />
 
             <div className="flex items-center ">
-              <span className="text-white/70 mr-[15px] font-suisse text-[13px] font-light">
-                home
-              </span>
               <HamburgerMenu
                 open={open}
                 onClick={() => setOpen((prev) => !prev)}
@@ -56,7 +53,7 @@ export default function NavBar() {
             </div>
           </div>
 
-          <div className="flex text-text gap-2 items-center">
+          <div className=" hidden sm:flex text-text gap-2 items-center">
             <div className="flex items-center gap-px text-text text-[10px] tracking-[3px]">
               <span className="leading-none">[</span>
               <span className="inline-block h-[3px] w-[3px] rounded-full bg-[#00ef5f]"></span>
