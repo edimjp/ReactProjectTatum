@@ -52,13 +52,10 @@ const VideoCard = ({
           className="aspect-video size-full object-cover rounded-full"
         />
 
-        {/* Optional dark overlay */}
         <div className="absolute inset-0 bg-black/30 transition-colors duration-300 rounded-full" />
 
-        {/* Play button */}
         <motion.div className="absolute inset-0 flex items-center justify-center">
           <div className="flex flex-col items-center gap-1 text-(--color-text) uppercase font-bold text-[10px] ">
-            {/* Play icon */}
             <svg
               viewBox="0 0 24 24"
               fill="#f65600"
@@ -68,9 +65,7 @@ const VideoCard = ({
               <path d="M8 5v14l11-7z" />
             </svg>
 
-            {/* Reveal duration on hover */}
             <div className="relative overflow-hidden grid">
-              {/* Play text */}
               <motion.span
                 variants={{
                   initial: {
@@ -91,7 +86,6 @@ const VideoCard = ({
                 Play
               </motion.span>
 
-              {/* Duration text */}
               <motion.span
                 variants={{
                   initial: {
@@ -116,8 +110,6 @@ const VideoCard = ({
         </motion.div>
       </motion.button>
 
-      {/* Video modal */}
-
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -129,7 +121,6 @@ const VideoCard = ({
             onClick={handleClose}
             className="fixed inset-0 z-100 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
           >
-            {/* Modal content */}
             <motion.div
               initial={{ scale: 0, y: 12 }}
               animate={{ scale: 1, y: 0 }}
@@ -146,7 +137,7 @@ const VideoCard = ({
                 initial="initial"
                 animate={isClosing ? "initial" : undefined}
                 whileHover={isClosing ? undefined : "hover"}
-                className="absolute -top-12 right-0 grid size-10 place-items-center rounded-full text-white"
+                className="absolute -top-12 -right-40 grid size-12 place-items-center text-white bg-hover"
               >
                 <span className="relative size-6">
                   <motion.span
@@ -155,7 +146,7 @@ const VideoCard = ({
                       hover: { rotate: 0 },
                     }}
                     transition={{ duration: 1, ease: [0.06, 0, 0, 1] }}
-                    className="absolute inset-0 m-auto h-px w-full rounded-full bg-current"
+                    className="absolute inset-0 m-auto h-px w-7/10 rounded-full bg-current"
                   />
 
                   <motion.span
@@ -164,7 +155,7 @@ const VideoCard = ({
                       hover: { rotate: 0 },
                     }}
                     transition={{ duration: 1, ease: [0.06, 0, 0, 1] }}
-                    className="absolute inset-0 m-auto h-px w-full rounded-full bg-current"
+                    className="absolute inset-0 m-auto h-px w-7/10 rounded-full bg-current"
                   />
                 </span>
               </motion.button>
@@ -175,7 +166,7 @@ const VideoCard = ({
                 controls
                 autoPlay
                 playsInline
-                className="aspect-video w-full rounded-xl bg-black"
+                className="aspect-video w-full bg-black"
               >
                 Your browser does not support video playback.
               </video>

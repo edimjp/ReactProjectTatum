@@ -1,30 +1,73 @@
 import { useState } from "react";
+import { easeInOut, motion } from "motion/react";
 import VideoCard from "../home/VideoCard";
 import previewSrc from "../../assets/videos/fiftyseven-cover.mp4";
 import videoSrc from "../../assets/videos/fiftysevenmodal.mp4";
+
+const parentVariants = {
+  initial: { y: 0, opacity: 0 },
+  animate: {
+    y: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      staggerChildren: 0.5,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const textVariants = {
+  initial: { y: 12, opacity: 0 },
+  animate: { y: 0, opacity: 1, transition: { duration: 0.5, ease: easeInOut } },
+};
+
+const spanVariants = {
+  initial: { y: 12, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: easeInOut },
+  },
+};
 
 const HomeBody = () => {
   const [mouseOver, setMouseOver] = useState(false);
   //   const mouseEvent = mouseOver ? "bg-[#F75703]" : "bg-[#312F32]";
   return (
     <div className="relative mx-[4.1667vw]">
-      <div className="flex flex-col gap-3 text-white justify-center items-center mx-16 my-8">
-        <div className="tracking-[0.1em] font-['Eurostile_Next_LT_Pro_Light_Ext', sans-serif] scale-x-125 uppercase font-light text-[10px]">
+      <motion.div
+        variants={parentVariants}
+        initial="initial"
+        animate="animate"
+        className="flex flex-col gap-3 text-white justify-center items-center mx-16 my-8"
+      >
+        <motion.div
+          variants={textVariants}
+          className="tracking-[0.1em] font-['Eurostile_Next_LT_Pro_Light_Ext', sans-serif] scale-x-125 uppercase font-light text-[10px]"
+        >
           est. &middot; 2016
-        </div>
-        <div className="scale-x-125 font-eurostile font-thin text-center text-8xl">
-          Boutique
+        </motion.div>
+        <motion.div
+          variants={textVariants}
+          className="scale-x-125 font-['Bahnschrift_Light'] font-thin text-center text-8xl"
+        >
+          <motion.span variants={spanVariants}>Boutique</motion.span>
           <br />
-          studio.
-        </div>
-        <div className="text-[10px] tracking-[0.2em] text-white/80 text-center">
+          <motion.span variants={spanVariants}>studio.</motion.span>
+        </motion.div>
+        <motion.div
+          variants={textVariants}
+          className="text-[10px] tracking-[0.2em] text-white/80 text-center"
+        >
           HIGH-FIDELITY BRANDING & DESIGN FOR BIOTECH.
           <br />
           CLIMATE TECH. DEEP TECH & THE COMPANIES
           <br />
           DEFINING WHAT COMES NEXT
-        </div>
-        <a
+        </motion.div>
+        <motion.a
+          variants={textVariants}
           href="#"
           onMouseEnter={() => setMouseOver(!mouseOver)}
           onMouseLeave={() => setMouseOver(!mouseOver)}
@@ -43,8 +86,8 @@ const HomeBody = () => {
               mouseOver ? "translate-x-[-77px] h-2" : "translate-x-0 h-2"
             }`}
           ></div>
-        </a>
-      </div>
+        </motion.a>
+      </motion.div>
       <VideoCard
         previewSrc={previewSrc}
         videoSrc={videoSrc}
