@@ -1,5 +1,7 @@
+import HomeBody from "./pages/home/HomeBody";
+
 function App() {
-  return <div>App</div>;
+  return <HomeBody />;
 }
 
 export default App;
